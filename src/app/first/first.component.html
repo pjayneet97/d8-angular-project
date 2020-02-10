@@ -1,6 +1,3 @@
-<label>Enter your Name</label>
-<input type="text" name="name" [(ngModel)]="name">
-<p>{{name}}</p>
-
-<app-second></app-second>
-<app-second></app-second>
+<input type="text" placeholder="enter you name" [(ngModel)]="enteredName">
+<button (click)="addName()">Add</button>
+<p>You have entered : {{enteredName}}</p>

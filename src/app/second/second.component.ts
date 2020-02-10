@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    console.log("seceond cons")
+  }
 
   ngOnInit() {
+    console.log("sesonc ngonint")
   }
 
 }
