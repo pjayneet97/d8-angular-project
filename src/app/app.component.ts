@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-project';
+  regForm={name:'',age:''}
+  registeredMembers=[]
+  constructor(){
+
+  }
+  addName(){
+    this.registeredMembers.push(this.regForm)
+    this.regForm={name:'',age:''}
+  }
 }

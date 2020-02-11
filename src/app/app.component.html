@@ -1,2 +1,12 @@
-<app-first></app-first>
-<app-second></app-second>
+<div class="row">
+    <div class="col">
+        <input class="form-control" type="text" [(ngModel)]="regForm.name" placeholder="enter your name">
+        <br>
+        <input class="form-control" type="text" [(ngModel)]="regForm.age" placeholder="enter your age">
+        <br>
+        <button class="btn btn-primary" (click)="addName()">Add Name</button>
+    </div>
+    <div class="col">
+        <app-member-card [member]="item" *ngFor="let item of registeredMembers"></app-member-card>
+    </div>
+</div>
