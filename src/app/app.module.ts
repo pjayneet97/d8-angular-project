@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MemberCardComponent } from './member-card/member-card.component';
+import { MemberChildComponent } from './member-card/member-child/member-child.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { MemberCardComponent } from './member-card/member-card.component';
     AppComponent,
     RegistrationComponent,
     MemberCardComponent,
+    MemberChildComponent,
   ],
   imports: [
     BrowserModule,

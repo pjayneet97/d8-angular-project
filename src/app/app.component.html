@@ -7,6 +7,6 @@
         <button class="btn btn-primary" (click)="addName()">Add Name</button>
     </div>
     <div class="col">
-        <app-member-card [member]="item" *ngFor="let item of registeredMembers"></app-member-card>
+        <app-member-card (onDeleted)="deleteMember($event)" [member]="item" *ngFor="let item of registeredMembers"></app-member-card>
     </div>
 </div>

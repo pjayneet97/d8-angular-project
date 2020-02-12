@@ -11,5 +11,8 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
   }
+  whichBtnClicked(btnName){  // name button clicked with name jayneet
+    console.log(btnName)
+  }
 
 }
