@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MamberService } from '../mamber.service';
 
 @Component({
   selector: 'app-member-card',
@@ -7,14 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MemberCardComponent implements OnInit {
   @Input('member') data;
-  @Output('onDeleted') eventForDelete =new EventEmitter();
-  constructor() { }
+
+  constructor(public memberService:MamberService) { }
 
   ngOnInit() {
   }
-  delete(event){
-    console.log(event)
-    this.eventForDelete.emit(this.data)
+  delete(){
+    this.memberService.deleteMember(this.data)
   }
 
 }

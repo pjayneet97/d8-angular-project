@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { MemberChildComponent } from './member-card/member-child/member-child.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { MemberChildComponent } from './member-card/member-child/member-child.co
     RegistrationComponent,
     MemberCardComponent,
     MemberChildComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

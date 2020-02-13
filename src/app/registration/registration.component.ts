@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {MamberService} from '../mamber.service'
+import { Member } from '../models/member.model';
 
 @Component({
   selector: 'app-registration',
@@ -6,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  name
-  constructor() { }
+  member:Member={name:"",age:""}
+  constructor(public memberService:MamberService) { }
 
   ngOnInit() {
+  
   }
-  whichBtnClicked(btnName){  // name button clicked with name jayneet
-    console.log(btnName)
+  addMember(){
+    this.memberService.addMember(this.member)
+    this.member={name:"",age:""}
   }
+
 
 }

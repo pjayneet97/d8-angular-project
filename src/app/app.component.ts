@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MamberService } from './mamber.service';
 
 @Component({
   selector: 'app-root',
@@ -8,25 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'first-project';
   regForm={name:'',age:''}
+  objeReceivedfromChildMember
   registeredMembers=[]
-  constructor(){
+  constructor(public memberService:MamberService){
+  }
 
-  }
-  addName(){
-    this.registeredMembers.push(this.regForm)
-    this.regForm={name:'',age:''}
-  }
-  deleteMember(member){
-   this.registeredMembers = this.registeredMembers.filter((element)=>{
-      if(element!=member){
-        return true;
-      }
-      else{
-        return false
-      }
-    })
-  }
-  whichBtnClicked(btnName){
-    console.log(btnName)
-  }
+
+
 }
