@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "naarisriniketan-3d79f": {
+      "hosting": {
+        "first-project": [
+          "naarisriniketan-3d79f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "training-project-fa527"
+  }
+}

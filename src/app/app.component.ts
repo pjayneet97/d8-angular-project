@@ -7,11 +7,8 @@ import { MamberService } from './mamber.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'first-project';
-  regForm={name:'',age:''}
-  objeReceivedfromChildMember
-  registeredMembers=[]
-  constructor(public memberService:MamberService){
+
+  constructor(){
   }
 
 

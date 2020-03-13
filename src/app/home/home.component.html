@@ -1,0 +1,9 @@
+<div class="row mx-auto">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+        <app-member-card (SendToAppComp)="receiveData($event)" [member]="item" *ngFor="let item of memberService.members"></app-member-card>
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {MamberService} from '../mamber.service'
 import { Member } from '../models/member.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,7 +10,7 @@ import { Member } from '../models/member.model';
 })
 export class RegistrationComponent implements OnInit {
   member:Member={name:"",age:""}
-  constructor(public memberService:MamberService) { }
+  constructor(public memberService:MamberService,public router:Router) { }
 
   ngOnInit() {
   
@@ -17,6 +18,9 @@ export class RegistrationComponent implements OnInit {
   addMember(){
     this.memberService.addMember(this.member)
     this.member={name:"",age:""}
+    // code to redirect to home 
+    this.router.navigateByUrl('/home')
+
   }
 
 

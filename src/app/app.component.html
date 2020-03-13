@@ -1,8 +1,4 @@
-<div class="row">
-    <div class="col">
-        <app-registration></app-registration>
-    </div>
-    <div class="col">
-        <app-member-card [member]="item" *ngFor="let item of memberService.members"></app-member-card>
-    </div>
-</div>
+<app-navbar></app-navbar>
+<br>
+<router-outlet></router-outlet>
+
