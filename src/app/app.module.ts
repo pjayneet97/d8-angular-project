@@ -10,11 +10,17 @@ import { AdminComponent } from './admin/admin.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import 'firebase/firestore';
+import { auth } from 'firebase/app';
 import { NavbarComponent } from './shared-components/navbar/navbar.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { AuthComponent } from './auth/auth.component';
+import { MemberDetailsComponent } from './member-details/member-details.component';
+import { TestPipe } from './test.pipe';
 
 
 
@@ -28,6 +34,10 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     SigninComponent,
     HomeComponent,
+    SignupComponent,
+    AuthComponent,
+    MemberDetailsComponent,
+    TestPipe,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +45,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

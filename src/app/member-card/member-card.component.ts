@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MamberService } from '../mamber.service';
+import { Router } from '@angular/router';
+import { isNumber } from 'util';
 
 @Component({
   selector: 'app-member-card',
@@ -9,12 +11,16 @@ import { MamberService } from '../mamber.service';
 export class MemberCardComponent implements OnInit {
   @Input('member') data;
   @Output() SendToAppComp=new EventEmitter();
-  editMemberObject={name:"",age:""}
+  editMemberObject={name:"",age:"",createdBy:""}
   isformvisible=false
-  constructor(public memberService:MamberService) { }
+  num:number=0
+  disableSubmitButton
+  constructor(public memberService:MamberService,public router:Router) { }
 
   ngOnInit() {
+    console.log(this.data)
   }
+
   delete(){
     this.memberService.deleteMember(this.data.id)
   }
@@ -24,6 +30,7 @@ export class MemberCardComponent implements OnInit {
   onUpdateClicked(){
     this.editMemberObject.name=this.data.name;
     this.editMemberObject.age=this.data.age;
+    this.editMemberObject.createdBy=this.data.createdBy;
     this.isformvisible=!this.isformvisible;
   }
   update(){
@@ -31,5 +38,9 @@ export class MemberCardComponent implements OnInit {
     this.memberService.updateMember(this.data.id,this.editMemberObject)
     this.isformvisible=false
   }
+/*   sendtoMemberDetails(){
+    let url= '/home/members/'+this.data.id
+    this.router.navigateByUrl(url)
+  } */
 
 }

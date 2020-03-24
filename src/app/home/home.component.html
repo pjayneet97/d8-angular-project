@@ -3,6 +3,9 @@
     </div>
     <div class="col-lg-6">
         <app-member-card (SendToAppComp)="receiveData($event)" [member]="item" *ngFor="let item of memberService.members"></app-member-card>
+        <h4 *ngIf="memberService.members.length==0">No Members Found please add members
+        <button [routerLink]="['/home/add-member']" routerLinkActive="router-link-active" >Add Members</button>    
+        </h4>
     </div>
     <div class="col-lg-3">
     </div>

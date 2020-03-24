@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <h2>Member Details</h2>
+        <p><b>Name : </b>{{member.name | test | uppercase }}</p>
+        <p><b>Age : </b>{{member.age}}</p>
+        <p><b>Date : </b>{{member.timestamp.toDate() | date:"short"}}</p>
+        <br><br>
+        <button class="btn btn-warning" routerLink="/home">Go Back</button>
+        
+    </div>
+    <div class="col-lg-3"></div>
+</div>

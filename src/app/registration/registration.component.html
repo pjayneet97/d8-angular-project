@@ -1,11 +1,32 @@
+<!-- <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <h3 [ngStyle]="{'color': getColor()}">Enter Details to add a member</h3>
+        <input class="form-control" type="text" [(ngModel)]="member.name" placeholder="enter your name">
+        <br>
+        <input class="form-control" type="text" [(ngModel)]="member.age" placeholder="enter your age">
+<br>
+<button [disabled]="!isInputValid()" class="btn btn-primary btn-block" (click)="addMember()">Add</button>
+    </div>
+    <div class="col-lg-3"></div>
+</div> -->
 <div class="row">
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
-        <input class="form-control" type="text" [(ngModel)]="member.name" placeholder="enter your name">
-<br>
-<input class="form-control" type="text" [(ngModel)]="member.age" placeholder="enter your age">
-<br>
-<button class="btn btn-primary btn-block" (click)="addMember()">Add</button>
+        <form (ngSubmit)="testSubmit(addMemberForm)" #addMemberForm="ngForm">
+            <h3 [ngStyle]="{'color': getColor()}">Enter Details to add a member</h3>
+            <input class="form-control" #name="ngModel" name="name" ngModel type="text" required placeholder="enter your name">
+            <p style="color: red;" *ngIf="!name.touched">You have not touched the name yet</p>
+            <p style="color: red;" *ngIf="!name.dirty">You have not types anything</p>
+            <p style="color: red;" *ngIf="!name.valid">Input is required</p>
+            <br>
+            <input class="form-control" name="age" #age="ngModel" ngModel type="text" placeholder="enter your age">
+            <p style="color: red;" *ngIf="!age.touched">You have not touched the name yet</p>
+            <p style="color: red;" *ngIf="!age.dirty">You have not types anything</p>
+            <p style="color: red;" *ngIf="!age.valid">Input is required</p>
+            <br>
+            <button type="submit"  class="btn btn-primary btn-block">Add</button>
+        </form>
     </div>
     <div class="col-lg-3"></div>
 </div>

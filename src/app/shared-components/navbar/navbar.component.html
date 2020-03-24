@@ -12,10 +12,10 @@
             <a  class="nav-link"routerLink="/home/add-member">Add Member</a>
           </li>
           <li *ngIf="!auth.isSignedIn" class="nav-item">
-            <a class="nav-link btn btn-success" style="color: white;" routerLink="/signin">Sign In</a>
+            <a class="nav-link btn btn-success" style="color: white;" routerLink="/auth/signin">Sign In</a>
           </li>
           <li *ngIf="auth.isSignedIn" class="nav-item">
-            <a class="nav-link btn btn-success" style="color: white;" routerLink="/signin">Logout</a>
+            <a class="nav-link btn btn-success" style="color: white;" (click)="logout()" >Logout</a>
           </li>
       </ul>
     </div>

@@ -1,9 +1,10 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body">
       <div *ngIf="!isformvisible">
-        <h5 class="card-title">{{data.name}}</h5>
+       <!--  <h5 routerLink="/home/members/{{data.id}}" class="card-title">{{data.name}}</h5> -->
+        <h5 [routerLink]="['members',data.id]" routerLinkActive="router-link-active"  class="card-title">{{data.name}}</h5>
         <hr>
-        <p class="card-text">{{data.age}}</p>
+<!--         <p class="card-text">{{data.age}}</p> -->
         <button (click)="delete()" class="btn btn-danger">Delete</button>
         <button (click)="onUpdateClicked()" class="btn btn-warning">Update</button>
       </div>
